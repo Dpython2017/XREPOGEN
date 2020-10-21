@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/gh/RubaXa/Sortable/Sortable.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://daemonite.github.io/material/js/material.min.js"></script>
+<link rel="stylesheet" href="https://daemonite.github.io/material/css/material.min.css">
+</head>
+<div class="card mt-5">
+    <div class="row">
+        <div class="col-md-6 mt-5 ml-3 mb-5">
+            <h4>
+          Select Subjects
+        </h4>
+        <p>
+          Try to drag and drop items within lists or between lists.
+        </p>
+        <ul class="list-group" id="demo1">
+          <li class="list-group-item">Moral Science</li>
+          <li class="list-group-item">English Language</li>
+          <li class="list-group-item">Hindi</li>
+          <li class="list-group-item">Physics</li>
+          <li class="list-group-item">Computer</li>
+        </ul>
+        </div>
+
+    <div class="col-md-5 mt-5">
+        <a href="media/format.csv" class="btn btn-primary">Generate Format</a>
+    </div>
+</div>
+
+
+<script>
+Sortable.create(demo1, {
+  animation: 100,
+  group: 'list-1',
+  draggable: '.list-group-item',
+  handle: '.list-group-item',
+  sort: true,
+  filter: '.sortable-disabled',
+  chosenClass: 'active'
+});
+
+Sortable.create(demo2, {
+  group: 'list-1',
+  handle: '.list-group-item'
+});
+
+</script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    .img-scroll{
+     height:150px;
+  overflow-y: scroll;
+    }
+</style>
+<div class="row img-scroll">
+    <div class="col-md-3">
+        <img src="{% static 'pic1.jpg' %}">
+        <img src="{% static 'pic1.jpg' %}">
+        <img src="{% static 'pic1.jpg' %}">
+        <img src="{% static 'pic1.jpg' %}">
+        <img src="{% static 'pic1.jpg' %}">
+
+
+    </div>
+    <div class="col-md-9">
+
+    </div>
+</div>
+{% endblock %}

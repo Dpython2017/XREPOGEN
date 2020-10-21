@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RepoGen</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+    background: #fbfbfd;
+}
+    </style>
+</head>
+<body>
+{% include 'navbar.html'%}
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+<div class="container-fluid">
+{% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
